@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'a8-start';
-  public name = 'Shiba Inu';
-  public available = true;
-  public skills: string[] = ['Amigable', 'Leal', 'Fiel']
 }
