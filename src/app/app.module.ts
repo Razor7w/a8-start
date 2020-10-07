@@ -18,6 +18,7 @@ import { Tarea1Component } from './components/tarea1/tarea1.component';
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'tarea1', component: Tarea1Component },
+  { path: 'clase', component: ClaseAComponent },
 ];
 
 @NgModule({

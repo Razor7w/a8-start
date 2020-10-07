@@ -2,4 +2,10 @@
 <!-- <app-clase-a></app-clase-a> -->
 <!-- TODO: Crear componente Sidenav -->
 
-  <router-outlet></router-outlet>
+  <router-outlet (activate)="recieverMyEvent($event)"></router-outlet>
+
+  <p>Foto usada: {{photoUsed}} </p>
+
+  <app-clase-a (myEvent)="recieverMyEvent2($event)" [morePhotos]="morePhotosPadres"></app-clase-a>
+
+  <p>Foto usada: {{photoUsed2}} </p>
