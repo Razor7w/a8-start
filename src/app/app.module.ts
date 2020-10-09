@@ -14,6 +14,11 @@ import {MatIconModule} from '@angular/material/icon';
 import { ClaseAComponent } from './components/clase-a/clase-a.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { Tarea1Component } from './components/tarea1/tarea1.component';
+import { TrimPipe } from './pipes/trim.pipe';
+import { FormsModule } from '@angular/forms';
+import { MouseDirective } from './directives/handlerEvent/mouse.directive';
+import { ClickDirective } from './directives/handlerEvent/click.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -28,7 +33,10 @@ const routes: Routes = [
     ToolbarComponent,
     ClaseAComponent,
     InicioComponent,
-    Tarea1Component
+    Tarea1Component,
+    TrimPipe,
+    MouseDirective,
+    ClickDirective
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,9 @@ const routes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    HttpClientModule
   ],
   exports: [RouterModule],
   providers: [],
