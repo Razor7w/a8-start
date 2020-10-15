@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { MouseDirective } from './directives/handlerEvent/mouse.directive';
 import { ClickDirective } from './directives/handlerEvent/click.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { RutasComponent } from './components/rutas/rutas.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
     Tarea1Component,
     TrimPipe,
     MouseDirective,
-    ClickDirective
+    ClickDirective,
+    RutasComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +48,9 @@ const routes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    RouterModule.forRoot(routes),
     FormsModule,
     HttpClientModule
   ],
-  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
