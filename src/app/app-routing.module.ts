@@ -4,6 +4,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { Tarea1Component } from './components/tarea1/tarea1.component';
 import { ClaseAComponent } from './components/clase-a/clase-a.component';
 import { RutasComponent } from './components/rutas/rutas.component';
+import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'tarea1', component: Tarea1Component },
   { path: 'clase', component: ClaseAComponent },
   { path: 'claserutas', component: RutasComponent },
+  { path: 'characters/detail/:id', component: CharacterDetailComponent },
   { path: 'claserutas/:id', component: RutasComponent },
   { path: '**', redirectTo: 'inicio', pathMatch: 'full'},
   { path: '', redirectTo: 'inicio', pathMatch: 'full'}

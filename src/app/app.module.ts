@@ -20,6 +20,7 @@ import { MouseDirective } from './directives/handlerEvent/mouse.directive';
 import { ClickDirective } from './directives/handlerEvent/click.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { RutasComponent } from './components/rutas/rutas.component';
+import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
 
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
@@ -38,7 +39,8 @@ const routes: Routes = [
     TrimPipe,
     MouseDirective,
     ClickDirective,
-    RutasComponent
+    RutasComponent,
+    CharacterDetailComponent
   ],
   imports: [
     BrowserModule,

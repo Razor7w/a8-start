@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import axios from 'axios';
+import { RickMortyApiService } from 'src/app/services/rick-morty-api.service';
+import { Character } from '../../interfaces/characters';
 
 interface Characters {
   [index: number]: {
@@ -30,7 +33,11 @@ export class Tarea1Component implements OnInit {
   public currentSpecies: string;
   public currentStatus: string;
   public currentOrigin: string;
-  constructor() {
+  public poolCharacters: Character[];
+  constructor(
+    private rickMortyApiService: RickMortyApiService,
+    private router: Router
+  ) {
     this.characters = [
       {
         id: 0,
@@ -52,6 +59,16 @@ export class Tarea1Component implements OnInit {
         this.setCharacter(0);
 
       });
+
+    this.rickMortyApiService.getPoolCharacter().subscribe(resp => {
+      console.log('My characters --> ', resp );
+      this.poolCharacters = resp;
+    })
+    this.rickMortyApiService.getAllCharacters().subscribe(resp => {
+      console.log(resp.results[0].name);
+    }, error => {
+      console.log(error);
+    });
   }
 
   setCharacter(index) {
@@ -78,6 +95,10 @@ export class Tarea1Component implements OnInit {
     }
     const index = this.currentId - 2;
     this.setCharacter(index);
+  }
+
+  characterDetail(id: number) {
+    this.router.navigate(['characters', 'detail', id]);
   }
 
 }
